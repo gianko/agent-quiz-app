@@ -1,0 +1,125 @@
+{
+  "categoryId": "model-selection",
+  "questions": [
+    {
+      "id": "ms-1",
+      "text": "What does a model's 'context window' determine?",
+      "choices": [
+        { "id": "ms-1-a", "text": "How fast the model generates tokens" },
+        { "id": "ms-1-b", "text": "The maximum amount of text (prompt + response) the model can process in a single call" },
+        { "id": "ms-1-c", "text": "The number of tasks the model can run in parallel" },
+        { "id": "ms-1-d", "text": "The recency of the model's training data" }
+      ],
+      "correctAnswerId": "ms-1-b",
+      "explanation": "The context window sets the upper bound on how much text — including the system prompt, conversation history, tool outputs, and generated response — can exist in a single inference call. Exceeding it causes the model to lose earlier content or the call to fail."
+    },
+    {
+      "id": "ms-2",
+      "text": "When is it most appropriate to use a smaller, faster model over a large frontier model?",
+      "choices": [
+        { "id": "ms-2-a", "text": "When the task requires nuanced reasoning or creative writing" },
+        { "id": "ms-2-b", "text": "For high-volume, low-latency tasks where accuracy requirements are moderate and cost matters" },
+        { "id": "ms-2-c", "text": "When the task involves processing long documents" },
+        { "id": "ms-2-d", "text": "When the model needs to call external tools" }
+      ],
+      "correctAnswerId": "ms-2-b",
+      "explanation": "Smaller models (like Haiku-class) excel at classification, extraction, summarization, and routing tasks at scale — where the per-call cost and latency of a frontier model is prohibitive and the tasks don't require deep reasoning."
+    },
+    {
+      "id": "ms-3",
+      "text": "What is the primary tradeoff when choosing between a larger and a smaller language model?",
+      "choices": [
+        { "id": "ms-3-a", "text": "Context window size vs. number of supported languages" },
+        { "id": "ms-3-b", "text": "Capability and reasoning depth vs. cost, latency, and throughput" },
+        { "id": "ms-3-c", "text": "Safety vs. helpfulness" },
+        { "id": "ms-3-d", "text": "Fine-tuning cost vs. inference cost" }
+      ],
+      "correctAnswerId": "ms-3-b",
+      "explanation": "Larger models generally offer stronger reasoning, better instruction-following, and higher accuracy — but at greater cost and latency. Smaller models are faster and cheaper but may struggle with complex tasks. Model selection is fundamentally about matching capability to task requirements within budget and latency constraints."
+    },
+    {
+      "id": "ms-4",
+      "text": "What does MMLU (Massive Multitask Language Understanding) measure?",
+      "choices": [
+        { "id": "ms-4-a", "text": "The speed of model inference across different hardware" },
+        { "id": "ms-4-b", "text": "A model's breadth of knowledge across 57 academic subjects" },
+        { "id": "ms-4-c", "text": "The model's ability to generate fluent prose" },
+        { "id": "ms-4-d", "text": "The maximum context length a model can handle" }
+      ],
+      "correctAnswerId": "ms-4-b",
+      "explanation": "MMLU evaluates a model's knowledge across 57 subjects including mathematics, history, law, medicine, and science. It is widely used to benchmark general academic knowledge and is one of the most cited evaluations when comparing frontier models."
+    },
+    {
+      "id": "ms-5",
+      "text": "What is fine-tuning a language model?",
+      "choices": [
+        { "id": "ms-5-a", "text": "Adjusting the temperature setting for better output quality" },
+        { "id": "ms-5-b", "text": "Continued training of a pre-trained model on a specific dataset to specialize its behavior" },
+        { "id": "ms-5-c", "text": "Adding a retrieval system to supplement the model's knowledge" },
+        { "id": "ms-5-d", "text": "Compressing the model to reduce its memory footprint" }
+      ],
+      "correctAnswerId": "ms-5-b",
+      "explanation": "Fine-tuning updates a pre-trained model's weights on a curated dataset, teaching it a specific style, format, domain vocabulary, or behavior. It's useful when prompting alone can't achieve the required consistency, but it requires labeled data, compute, and ongoing maintenance."
+    },
+    {
+      "id": "ms-6",
+      "text": "What does a model's 'knowledge cutoff' mean?",
+      "choices": [
+        { "id": "ms-6-a", "text": "The maximum number of facts the model can store" },
+        { "id": "ms-6-b", "text": "The date beyond which the model has no training data and lacks awareness of subsequent events" },
+        { "id": "ms-6-c", "text": "The point at which the model stops generating tokens" },
+        { "id": "ms-6-d", "text": "The token limit of the model's context window" }
+      ],
+      "correctAnswerId": "ms-6-b",
+      "explanation": "The knowledge cutoff is the date when training data collection ended. Events, discoveries, and information after that date are unknown to the model unless provided via the prompt or retrieval. This is a key consideration when selecting a model for tasks involving recent information."
+    },
+    {
+      "id": "ms-7",
+      "text": "When should you use a multimodal model instead of a text-only model?",
+      "choices": [
+        { "id": "ms-7-a", "text": "Whenever you need the model to generate long responses" },
+        { "id": "ms-7-b", "text": "When your task requires understanding or reasoning over images, audio, or other non-text inputs" },
+        { "id": "ms-7-c", "text": "When you need lower latency" },
+        { "id": "ms-7-d", "text": "When fine-tuning on a domain-specific dataset" }
+      ],
+      "correctAnswerId": "ms-7-b",
+      "explanation": "Multimodal models accept inputs beyond text — such as images, documents, audio, or video. Use them when the task involves visual content (e.g., image captioning, document OCR, diagram analysis) or when key information is only available in non-text form."
+    },
+    {
+      "id": "ms-8",
+      "text": "What model capability makes it suitable for summarizing or analyzing very long documents?",
+      "choices": [
+        { "id": "ms-8-a", "text": "High parameter count" },
+        { "id": "ms-8-b", "text": "A large context window that can hold the entire document in a single call" },
+        { "id": "ms-8-c", "text": "Low temperature for deterministic output" },
+        { "id": "ms-8-d", "text": "Support for tool use" }
+      ],
+      "correctAnswerId": "ms-8-b",
+      "explanation": "Long-context models (e.g., 100k–200k token windows) can ingest entire books, codebases, or legal documents in one call, enabling holistic summarization without chunking. Without sufficient context length, you must split documents and stitch results together, which introduces errors."
+    },
+    {
+      "id": "ms-9",
+      "text": "When is Retrieval-Augmented Generation (RAG) preferred over fine-tuning?",
+      "choices": [
+        { "id": "ms-9-a", "text": "When you need the model to adopt a specific writing style" },
+        { "id": "ms-9-b", "text": "When the knowledge base is large, frequently updated, or needs to be cited for transparency" },
+        { "id": "ms-9-c", "text": "When inference latency must be minimized" },
+        { "id": "ms-9-d", "text": "When the model needs to perform complex arithmetic" }
+      ],
+      "correctAnswerId": "ms-9-b",
+      "explanation": "RAG dynamically retrieves relevant documents at inference time and injects them into the prompt. It's preferred when data changes frequently (avoiding retraining), when the knowledge base is too large to memorize via fine-tuning, or when you need traceable sources for answers."
+    },
+    {
+      "id": "ms-10",
+      "text": "Which factor most directly influences the per-call cost of using a hosted LLM API?",
+      "choices": [
+        { "id": "ms-10-a", "text": "The number of parameters in the model" },
+        { "id": "ms-10-b", "text": "The total number of tokens processed (input + output)" },
+        { "id": "ms-10-c", "text": "The latency of the API call" },
+        { "id": "ms-10-d", "text": "The programming language used to call the API" }
+      ],
+      "correctAnswerId": "ms-10-b",
+      "explanation": "Hosted LLM APIs (like the Anthropic or OpenAI APIs) price by token — typically separate rates for input tokens and output tokens. Total cost = (input tokens × input price) + (output tokens × output price). Reducing prompt length and output verbosity are the primary levers for cost control."
+    }
+  ]
+}

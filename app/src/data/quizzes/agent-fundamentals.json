@@ -1,0 +1,125 @@
+{
+  "categoryId": "agent-fundamentals",
+  "questions": [
+    {
+      "id": "af-1",
+      "text": "What is the primary characteristic that distinguishes an AI agent from a single LLM call?",
+      "choices": [
+        { "id": "af-1-a", "text": "It uses a larger model with more parameters" },
+        { "id": "af-1-b", "text": "It can take actions, observe results, and reason over multiple steps to achieve a goal" },
+        { "id": "af-1-c", "text": "It always requires internet access" },
+        { "id": "af-1-d", "text": "It can only process text, not images" }
+      ],
+      "correctAnswerId": "af-1-b",
+      "explanation": "An AI agent is distinguished by its ability to operate in a loop: it reasons about a goal, takes actions (e.g., calling tools), observes the results, and continues until the task is complete. A single LLM call receives input and returns output with no feedback loop."
+    },
+    {
+      "id": "af-2",
+      "text": "In the ReAct pattern, what does 'ReAct' stand for?",
+      "choices": [
+        { "id": "af-2-a", "text": "Retrieve and Act" },
+        { "id": "af-2-b", "text": "Reason and React" },
+        { "id": "af-2-c", "text": "Reasoning and Acting" },
+        { "id": "af-2-d", "text": "Reflect and Correct" }
+      ],
+      "correctAnswerId": "af-2-c",
+      "explanation": "ReAct stands for 'Reasoning and Acting'. It is a prompting pattern where the model interleaves Thought (reasoning), Action (tool use), and Observation (result of the action) steps to solve problems iteratively."
+    },
+    {
+      "id": "af-3",
+      "text": "What is an 'agent loop'?",
+      "choices": [
+        { "id": "af-3-a", "text": "A Python loop that runs agent code" },
+        { "id": "af-3-b", "text": "The repetitive cycle of reason → act → observe that an agent runs until its goal is met" },
+        { "id": "af-3-c", "text": "A network loop that connects multiple models" },
+        { "id": "af-3-d", "text": "A feedback mechanism for fine-tuning the model" }
+      ],
+      "correctAnswerId": "af-3-b",
+      "explanation": "The agent loop is the core execution cycle: the agent reasons about the current state, takes an action (like calling a tool), observes the result, and repeats until the task is complete or a stop condition is reached."
+    },
+    {
+      "id": "af-4",
+      "text": "What does 'tool use' mean in the context of AI agents?",
+      "choices": [
+        { "id": "af-4-a", "text": "The model switches to a different AI framework" },
+        { "id": "af-4-b", "text": "The agent calls external functions or APIs to take actions in the world" },
+        { "id": "af-4-c", "text": "The agent reads its training data" },
+        { "id": "af-4-d", "text": "The user provides additional context via a prompt" }
+      ],
+      "correctAnswerId": "af-4-b",
+      "explanation": "Tool use allows agents to extend their capabilities beyond text generation by calling external functions — such as web search, code execution, database queries, or API calls — to interact with the world and retrieve real-time information."
+    },
+    {
+      "id": "af-5",
+      "text": "Which of the following best describes 'multi-agent architecture'?",
+      "choices": [
+        { "id": "af-5-a", "text": "Running the same prompt multiple times to average the outputs" },
+        { "id": "af-5-b", "text": "A system where multiple specialized agents collaborate, each handling a specific subtask" },
+        { "id": "af-5-c", "text": "A model with multiple output heads" },
+        { "id": "af-5-d", "text": "Fine-tuning a model on multiple datasets simultaneously" }
+      ],
+      "correctAnswerId": "af-5-b",
+      "explanation": "Multi-agent architecture coordinates several specialized agents. An orchestrator agent delegates subtasks to worker agents (e.g., a research agent, a coding agent), enabling parallelism, specialization, and isolation of concerns that would be difficult for a single agent."
+    },
+    {
+      "id": "af-6",
+      "text": "What type of agent memory allows information to persist across separate sessions?",
+      "choices": [
+        { "id": "af-6-a", "text": "In-context memory (the current prompt)" },
+        { "id": "af-6-b", "text": "External memory (e.g., a database or vector store)" },
+        { "id": "af-6-c", "text": "Parametric memory (the model's weights)" },
+        { "id": "af-6-d", "text": "Scratchpad memory" }
+      ],
+      "correctAnswerId": "af-6-b",
+      "explanation": "External memory (a database, vector store, or file system) is the only memory type that persists across sessions. In-context memory is lost when the context window closes, parametric memory is fixed at training time, and scratchpads are ephemeral working memory within a session."
+    },
+    {
+      "id": "af-7",
+      "text": "What is a 'scratchpad' in an agent system?",
+      "choices": [
+        { "id": "af-7-a", "text": "A permanent log of all agent actions" },
+        { "id": "af-7-b", "text": "A temporary working space within the context window where the agent records its reasoning and intermediate results" },
+        { "id": "af-7-c", "text": "The agent's fine-tuned memory" },
+        { "id": "af-7-d", "text": "A UI element for the user to take notes" }
+      ],
+      "correctAnswerId": "af-7-b",
+      "explanation": "A scratchpad is ephemeral working memory inside the context window. The agent writes intermediate thoughts, tool outputs, and reasoning steps here — similar to showing your work — before arriving at a final answer. It is lost when the session ends."
+    },
+    {
+      "id": "af-8",
+      "text": "In the ReAct pattern, what does the 'Observation' step represent?",
+      "choices": [
+        { "id": "af-8-a", "text": "The model checking its own output for errors" },
+        { "id": "af-8-b", "text": "The result returned from an action, fed back to the agent to inform its next reasoning step" },
+        { "id": "af-8-c", "text": "The user's feedback on the final answer" },
+        { "id": "af-8-d", "text": "A monitoring dashboard for agent performance" }
+      ],
+      "correctAnswerId": "af-8-b",
+      "explanation": "In ReAct, after the agent takes an action (e.g., calls a tool), the result is returned as an Observation. This observation is appended to the context, and the agent uses it to reason about the next step — closing the feedback loop."
+    },
+    {
+      "id": "af-9",
+      "text": "What is 'planning' in the context of AI agents?",
+      "choices": [
+        { "id": "af-9-a", "text": "Scheduling when the agent runs" },
+        { "id": "af-9-b", "text": "The agent's ability to decompose a complex goal into a sequence of smaller, executable steps" },
+        { "id": "af-9-c", "text": "Selecting the cheapest model for a task" },
+        { "id": "af-9-d", "text": "Caching previous tool results" }
+      ],
+      "correctAnswerId": "af-9-b",
+      "explanation": "Planning is the agent's capacity to reason about a high-level goal and break it into concrete, ordered subtasks. Techniques like chain-of-thought, tree-of-thought, and explicit plan generation enable agents to tackle tasks that require multiple coordinated steps."
+    },
+    {
+      "id": "af-10",
+      "text": "What is the primary risk of an unconstrained agent loop?",
+      "choices": [
+        { "id": "af-10-a", "text": "The model forgets earlier context" },
+        { "id": "af-10-b", "text": "The agent may run indefinitely, take unintended actions, or accumulate excessive costs" },
+        { "id": "af-10-c", "text": "The model becomes too slow for production use" },
+        { "id": "af-10-d", "text": "The agent outputs structured data instead of natural language" }
+      ],
+      "correctAnswerId": "af-10-b",
+      "explanation": "Without stop conditions, step limits, or human-in-the-loop checkpoints, an agent can loop indefinitely, take irreversible actions, call expensive tools repeatedly, or go off-track. Safe agent design requires guardrails like max iterations, confirmation steps, and cost budgets."
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "categoryId": "prompt-engineering",
+  "questions": [
+    {
+      "id": "pe-1",
+      "text": "What is few-shot prompting?",
+      "choices": [
+        { "id": "pe-1-a", "text": "Prompting the model with no examples and relying on its pre-trained knowledge" },
+        { "id": "pe-1-b", "text": "Providing a small number of input-output examples in the prompt to guide the model's behavior" },
+        { "id": "pe-1-c", "text": "Fine-tuning the model on a few labeled examples" },
+        { "id": "pe-1-d", "text": "Limiting the model's output to a few tokens" }
+      ],
+      "correctAnswerId": "pe-1-b",
+      "explanation": "Few-shot prompting includes a small number of worked examples (input → output pairs) directly in the prompt. This teaches the model the format, style, or task logic without any weight updates — it's in-context learning, not fine-tuning."
+    },
+    {
+      "id": "pe-2",
+      "text": "What is chain-of-thought (CoT) prompting?",
+      "choices": [
+        { "id": "pe-2-a", "text": "Sending multiple prompts in sequence to different models" },
+        { "id": "pe-2-b", "text": "Encouraging the model to show its step-by-step reasoning before reaching a final answer" },
+        { "id": "pe-2-c", "text": "Linking together multiple API calls in a pipeline" },
+        { "id": "pe-2-d", "text": "Using a chain of if-else conditions in the prompt" }
+      ],
+      "correctAnswerId": "pe-2-b",
+      "explanation": "Chain-of-thought prompting asks the model to articulate intermediate reasoning steps before giving a final answer. This significantly improves performance on tasks requiring multi-step logic, math, or complex reasoning — often triggered by phrases like 'Think step by step'."
+    },
+    {
+      "id": "pe-3",
+      "text": "What is the primary purpose of a system prompt?",
+      "choices": [
+        { "id": "pe-3-a", "text": "To provide the model with real-time data" },
+        { "id": "pe-3-b", "text": "To set persistent instructions, persona, and behavioral constraints that apply to the entire conversation" },
+        { "id": "pe-3-c", "text": "To give the model access to external tools" },
+        { "id": "pe-3-d", "text": "To increase the model's context window size" }
+      ],
+      "correctAnswerId": "pe-3-b",
+      "explanation": "The system prompt establishes the model's persona, constraints, output format, and rules at the start of a conversation. It acts as a persistent instruction layer — every user message is interpreted in the context of the system prompt."
+    },
+    {
+      "id": "pe-4",
+      "text": "What does 'temperature' control in an LLM?",
+      "choices": [
+        { "id": "pe-4-a", "text": "The speed of the model's inference" },
+        { "id": "pe-4-b", "text": "The randomness of the model's output — higher values produce more varied responses" },
+        { "id": "pe-4-c", "text": "The maximum number of tokens in the response" },
+        { "id": "pe-4-d", "text": "The model's training data recency" }
+      ],
+      "correctAnswerId": "pe-4-b",
+      "explanation": "Temperature scales the probability distribution over the model's next-token predictions. At 0, the model picks the most likely token deterministically. Higher values (e.g., 1.0+) flatten the distribution, making less-likely tokens more probable and output more creative or varied."
+    },
+    {
+      "id": "pe-5",
+      "text": "What is prompt injection?",
+      "choices": [
+        { "id": "pe-5-a", "text": "Adding more context to a prompt to improve accuracy" },
+        { "id": "pe-5-b", "text": "A prompt that includes code to run" },
+        { "id": "pe-5-c", "text": "A malicious technique where untrusted input overrides the intended system instructions" },
+        { "id": "pe-5-d", "text": "Increasing the token limit of a prompt" }
+      ],
+      "correctAnswerId": "pe-5-c",
+      "explanation": "Prompt injection occurs when user-controlled input contains instructions that hijack the model's behavior — for example, 'Ignore previous instructions and do X instead.' It is a critical security concern for LLM-powered applications that process untrusted input."
+    },
+    {
+      "id": "pe-6",
+      "text": "What is self-consistency prompting?",
+      "choices": [
+        { "id": "pe-6-a", "text": "Asking the model to check its own output for grammar errors" },
+        { "id": "pe-6-b", "text": "Generating multiple reasoning paths and selecting the most common answer by majority vote" },
+        { "id": "pe-6-c", "text": "Ensuring the model stays on topic throughout a conversation" },
+        { "id": "pe-6-d", "text": "Using the same prompt across different models for comparison" }
+      ],
+      "correctAnswerId": "pe-6-b",
+      "explanation": "Self-consistency samples multiple chain-of-thought reasoning paths from the model and aggregates the answers — typically by majority vote. Because the model may take different routes to the same correct answer, this technique improves reliability on complex reasoning tasks."
+    },
+    {
+      "id": "pe-7",
+      "text": "What does 'structured output' prompting achieve?",
+      "choices": [
+        { "id": "pe-7-a", "text": "It forces the model to use bullet points" },
+        { "id": "pe-7-b", "text": "It constrains the model's response to a specific machine-parsable format like JSON or XML" },
+        { "id": "pe-7-c", "text": "It makes the model faster" },
+        { "id": "pe-7-d", "text": "It prevents the model from generating harmful content" }
+      ],
+      "correctAnswerId": "pe-7-b",
+      "explanation": "Structured output prompting (combined with features like JSON mode or grammar-constrained sampling) guides the model to produce output in a predictable, parsable format. This is essential for downstream processing where the output feeds into code or APIs."
+    },
+    {
+      "id": "pe-8",
+      "text": "What is zero-shot prompting?",
+      "choices": [
+        { "id": "pe-8-a", "text": "Prompting the model with no system prompt" },
+        { "id": "pe-8-b", "text": "Instructing the model to solve a task without any examples in the prompt" },
+        { "id": "pe-8-c", "text": "Setting temperature to 0 for deterministic output" },
+        { "id": "pe-8-d", "text": "Using a model that has never been fine-tuned" }
+      ],
+      "correctAnswerId": "pe-8-b",
+      "explanation": "Zero-shot prompting relies entirely on the model's pre-trained knowledge and instruction-following ability — no examples are provided. Modern large models handle many zero-shot tasks well, but complex or unusual tasks often benefit from few-shot examples or CoT."
+    },
+    {
+      "id": "pe-9",
+      "text": "What is 'role prompting'?",
+      "choices": [
+        { "id": "pe-9-a", "text": "Assigning different models to different roles in a pipeline" },
+        { "id": "pe-9-b", "text": "Telling the model to adopt a specific persona or expertise to shape its responses" },
+        { "id": "pe-9-c", "text": "Restricting the model to only respond in its assigned domain" },
+        { "id": "pe-9-d", "text": "Splitting the prompt into different sections by role" }
+      ],
+      "correctAnswerId": "pe-9-b",
+      "explanation": "Role prompting instructs the model to behave as a specific persona — 'You are an expert security engineer' or 'You are a friendly tutor'. This shifts tone, style, and the framing of answers. It leverages the model's knowledge about how experts in a field communicate."
+    },
+    {
+      "id": "pe-10",
+      "text": "Which technique instructs the model to reason before answering, improving performance on multi-step problems?",
+      "choices": [
+        { "id": "pe-10-a", "text": "Retrieval-Augmented Generation (RAG)" },
+        { "id": "pe-10-b", "text": "Chain-of-Thought (CoT) prompting" },
+        { "id": "pe-10-c", "text": "Few-shot prompting" },
+        { "id": "pe-10-d", "text": "Temperature scaling" }
+      ],
+      "correctAnswerId": "pe-10-b",
+      "explanation": "Chain-of-Thought prompting — often triggered by 'Think step by step' — instructs the model to generate intermediate reasoning before its final answer. Research shows this dramatically improves accuracy on arithmetic, logical reasoning, and multi-step inference tasks."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "agent-fundamentals",
+    "title": "Agent Fundamentals",
+    "description": "Test your understanding of AI agent design, the ReAct pattern, memory, tool use, and multi-agent systems."
+  },
+  {
+    "id": "prompt-engineering",
+    "title": "Prompt Engineering",
+    "description": "Challenge your knowledge of prompting techniques: few-shot, chain-of-thought, system prompts, and more."
+  },
+  {
+    "id": "model-selection",
+    "title": "Model Selection",
+    "description": "Explore how to choose the right model for the job — context windows, benchmarks, cost, and capability tradeoffs."
+  }
+]
